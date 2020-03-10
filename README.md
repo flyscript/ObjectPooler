@@ -8,10 +8,10 @@ The system also has the ability to reallocate memory for itself _if_ you request
 Of course, it also has the essential abilities to get the next object, release an object back to the pool, retrive the size of the pool, retrive the number of available objects, retrive the number of active objects, and retrive all currently active objects.
 
 ### Key Features:
-* Uses a single array of fixed size and instantiation - changable only by user (memory-safe non-dynamic sizing)
-* Single efficient pointer defines split between available and active objects
-* Releasing to and retrieving objects from pool utilises a fast memory swap operation to restructure array in most efficient way
-* Changing size of pool allocates memory of appropriate size and clones object pointers into it, then releases old pool memory space to avoid memory leaks
+* Uses a [single array](https://github.com/flyscript/ObjectPooler/blob/master/Pool.h#L156) of fixed size at instantiation - [changable](https://github.com/flyscript/ObjectPooler/blob/master/Pool.h#L221) only by user (memory-safe non-dynamic sizing)
+* [Single efficient pointer](https://github.com/flyscript/ObjectPooler/blob/master/Pool.h#L51) defines split between available and active objects
+* Releasing to and retrieving objects from pool utilises a [fast memory swap operation](https://github.com/flyscript/ObjectPooler/blob/master/Pool.h#L198) to restructure array in most efficient way
+* [Changing size of pool](https://github.com/flyscript/ObjectPooler/blob/master/Pool.h#L220) allocates memory of appropriate size and clones object pointers into it, then releases old pool memory space to avoid memory leaks
 * Retrieve next available object
 * Release object to pool
 * Retrieve pool size
